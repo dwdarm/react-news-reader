@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ScrollMemory from 'react-router-scroll-memory';
+import { Provider } from 'react-redux';
+import configureStore from './store';
+import Index from './pages/Index';
+import Article from './pages/Article';
+
+const store = configureStore();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <ScrollMemory />
+          <Switch>
+            <Route path="/article/:id"><Article/></Route>
+            <Route path="/"><Index/></Route>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
