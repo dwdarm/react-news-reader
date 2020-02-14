@@ -18,6 +18,7 @@ const ArticleSection = ({history, location, id, articles}) => {
   return (
     <ArticleFull
       article={article}
+      onBack={() => history.goBack()}
     />
   );
 }

@@ -10,14 +10,25 @@ const useStyles = makeStyles({
   image: {
     width: '100%',
     margin: '1rem 0'
+  },
+  back: {
+    marginBottom: '1rem'
   }
 });
 
-export default ({article}) => {
+export default ({article, onBack}) => {
   const classes = useStyles();
 
   return (
     <div>
+
+      <Link
+        component="button"
+        variant="body1"
+        className={classes.back}
+        onClick={onBack}>
+        Back
+      </Link>
 
       <Typography variant="body2" className={classes.grey}>
         {article.source.name}
@@ -25,7 +36,7 @@ export default ({article}) => {
 
       <Typography variant="h5" component="h1">
         {article.title}
-      </Typography>
+      </Typography><br/>
 
       <Typography variant="body2" className={classes.grey}>
         Author: {article.author}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -35,7 +35,8 @@ export default ({
   const classes = useStyles();
 
   return (
-    <Drawer open={open} onClose={onClose}>
+    <SwipeableDrawer
+      disableBackdropTransition={true} open={open} onClose={onClose}>
       <Typography variant="h6" className={classes.title}>
         News Reader
       </Typography>
@@ -70,6 +71,6 @@ export default ({
           ))}
         </List>
       </div>
-    </Drawer>
+    </SwipeableDrawer>
   );
 }

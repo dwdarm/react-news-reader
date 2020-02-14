@@ -9,8 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const NavBar = ({onBurgerClick}) => {
   return (
-    <div>
-      <AppBar position="static">
+    <>
+      <AppBar position="fixed">
         <Container disableGutters={true}>
           <Toolbar>
             <Hidden mdUp>
@@ -24,7 +24,8 @@ const NavBar = ({onBurgerClick}) => {
           </Toolbar>
         </Container>
       </AppBar>
-    </div>
+      <Toolbar />
+    </>
   );
 }
 

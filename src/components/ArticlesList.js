@@ -34,7 +34,7 @@ const ArticlePreview = ({article, onClick}) => {
             </Grid>
             {article.urlToImage ?
               <Grid>
-                <Hidden xsDown>
+                <Hidden only='xs'>
                   <div style={{
                     width: 128,
                     height: 128,
